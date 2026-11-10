@@ -1,15 +1,23 @@
-# Expense Tracker — Full-Stack Portfolio Application
+# 💰 Expense Tracker — Full-Stack Portfolio Platform
+
+[![Live Demo](https://img.shields.io/badge/Demo-Live_Website-success?style=for-the-badge&logo=vercel)](https://expense-tracker-anji0522.vercel.app)
+[![API Status](https://img.shields.io/badge/API-Render_Hosted-blue?style=for-the-badge&logo=render)](https://expense-tracker-api-anji.onrender.com/api/health)
+[![Database](https://img.shields.io/badge/Database-Neon_PostgreSQL-00E599?style=for-the-badge&logo=postgresql)](https://neon.tech)
+[![GitHub](https://img.shields.io/badge/GitHub-Anji0522%2Fexpense--tracker-181717?style=for-the-badge&logo=github)](https://github.com/Anji0522/expense-tracker)
 
 A modern, production-ready Full-Stack Personal Finance & Expense Tracker built with **React**, **Node.js**, **Express**, and **PostgreSQL (Neon)**.
 
 ---
 
-## 🌐 Live Deployments & Links
+## 🔗 Live Application Links
 
-- 🚀 **Live Frontend Website**: [https://expense-tracker-anji0522.vercel.app](https://expense-tracker-anji0522.vercel.app)
-- ⚙️ **Production REST API**: [https://expense-tracker-api-anji.onrender.com](https://expense-tracker-api-anji.onrender.com)
-- 🗄️ **Database**: Hosted on [Neon](https://neon.tech/) Serverless PostgreSQL
-- 💻 **GitHub Repository**: [https://github.com/Anji0522/expense-tracker](https://github.com/Anji0522/expense-tracker)
+| Resource | Link | Description |
+| :--- | :--- | :--- |
+| 🚀 **Live Demo Website** | [https://expense-tracker-anji0522.vercel.app](https://expense-tracker-anji0522.vercel.app) | Production Frontend deployed on Vercel |
+| ⚙️ **REST API Backend** | [https://expense-tracker-api-anji.onrender.com](https://expense-tracker-api-anji.onrender.com) | Node.js & Express REST API on Render |
+| 🏥 **API Health Check** | [https://expense-tracker-api-anji.onrender.com/api/health](https://expense-tracker-api-anji.onrender.com/api/health) | Live PostgreSQL & server health status |
+| 🗄️ **Database Console** | [https://console.neon.tech](https://console.neon.tech) | Hosted Serverless PostgreSQL on Neon |
+| 💻 **GitHub Repository** | [https://github.com/Anji0522/expense-tracker](https://github.com/Anji0522/expense-tracker) | Complete source code repository |
 
 ---
 
