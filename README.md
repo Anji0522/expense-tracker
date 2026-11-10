@@ -1,5 +1,7 @@
 # 💰 Expense Tracker — Full-Stack Portfolio Platform
 
+live Demo :- https://expense-tracker-nu-nine-16.vercel.app/
+
 [![Live Demo](https://img.shields.io/badge/Demo-Live_Website-success?style=for-the-badge&logo=vercel)](https://expense-tracker-anji0522.vercel.app)
 [![API Status](https://img.shields.io/badge/API-Render_Hosted-blue?style=for-the-badge&logo=render)](https://expense-tracker-api-anji.onrender.com/api/health)
 [![Database](https://img.shields.io/badge/Database-Neon_PostgreSQL-00E599?style=for-the-badge&logo=postgresql)](https://neon.tech)
