@@ -4,6 +4,15 @@ A modern, production-ready Full-Stack Personal Finance & Expense Tracker built w
 
 ---
 
+## 🌐 Live Deployments & Links
+
+- 🚀 **Live Frontend Website**: [https://expense-tracker-anji0522.vercel.app](https://expense-tracker-anji0522.vercel.app)
+- ⚙️ **Production REST API**: [https://expense-tracker-api-anji.onrender.com](https://expense-tracker-api-anji.onrender.com)
+- 🗄️ **Database**: Hosted on [Neon](https://neon.tech/) Serverless PostgreSQL
+- 💻 **GitHub Repository**: [https://github.com/Anji0522/expense-tracker](https://github.com/Anji0522/expense-tracker)
+
+---
+
 ## 🌟 Key Features
 
 - 🔐 **Secure Authentication**: User registration, login with hashed passwords via `bcryptjs`, and stateless JWT tokens.
