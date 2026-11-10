@@ -7,10 +7,16 @@ import {
 
 const startServer = async () => {
   try {
-    // Verify the database before accepting requests.
-    const databaseInfo = await checkDatabaseConnection()
-    console.log('PostgreSQL connected successfully')
-    console.log(`Database: ${databaseInfo.database_name}`)
+    // Attempt database check on startup
+    try {
+      const databaseInfo = await checkDatabaseConnection()
+      console.log('PostgreSQL connected successfully')
+      console.log(`Database: ${databaseInfo.database_name}`)
+    } catch (dbErr) {
+      console.warn('⚠️ PostgreSQL connection failed on startup:')
+      console.warn(dbErr.message)
+      console.warn('Please ensure DATABASE_URL is configured in server/.env with your Neon credentials.')
+    }
 
     const server = app.listen(env.port, () => {
       console.log('')
