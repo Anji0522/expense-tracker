@@ -1,8 +1,6 @@
 # 💰 Expense Tracker — Full-Stack Portfolio Platform
 
-live Demo :- https://expense-tracker-nu-nine-16.vercel.app/
-
-[![Live Demo](https://img.shields.io/badge/Demo-Live_Website-success?style=for-the-badge&logo=vercel)](https://expense-tracker-anji0522.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Demo-Live_Website-success?style=for-the-badge&logo=vercel)](https://expense-tracker-nu-nine-16.vercel.app/)
 [![API Status](https://img.shields.io/badge/API-Render_Hosted-blue?style=for-the-badge&logo=render)](https://expense-tracker-api-anji.onrender.com/api/health)
 [![Database](https://img.shields.io/badge/Database-Neon_PostgreSQL-00E599?style=for-the-badge&logo=postgresql)](https://neon.tech)
 [![GitHub](https://img.shields.io/badge/GitHub-Anji0522%2Fexpense--tracker-181717?style=for-the-badge&logo=github)](https://github.com/Anji0522/expense-tracker)
@@ -15,7 +13,7 @@ A modern, production-ready Full-Stack Personal Finance & Expense Tracker built w
 
 | Resource | Link | Description |
 | :--- | :--- | :--- |
-| 🚀 **Live Demo Website** | [https://expense-tracker-anji0522.vercel.app](https://expense-tracker-anji0522.vercel.app) | Production Frontend deployed on Vercel |
+| 🚀 **Live Demo Website** | [https://expense-tracker-nu-nine-16.vercel.app](https://expense-tracker-nu-nine-16.vercel.app/) | Production Frontend deployed live on Vercel |
 | ⚙️ **REST API Backend** | [https://expense-tracker-api-anji.onrender.com](https://expense-tracker-api-anji.onrender.com) | Node.js & Express REST API on Render |
 | 🏥 **API Health Check** | [https://expense-tracker-api-anji.onrender.com/api/health](https://expense-tracker-api-anji.onrender.com/api/health) | Live PostgreSQL & server health status |
 | 🗄️ **Database Console** | [https://console.neon.tech](https://console.neon.tech) | Hosted Serverless PostgreSQL on Neon |
@@ -191,9 +189,9 @@ Visit `http://localhost:5173` to start using the app!
 
 ## 🚢 Deployment
 
-- **Backend**: Hosted on [Render](https://render.com/) with root directory `server`, build command `npm install`, and start command `npm start`.
-- **Frontend**: Hosted on [Vercel](https://vercel.com/) with root directory `client`, build command `npm run build`, and `vercel.json` rewrites.
-- **Database**: Hosted on [Neon](https://neon.tech/) PostgreSQL.
+- **Frontend**: Hosted on [Vercel](https://vercel.com/) at [https://expense-tracker-nu-nine-16.vercel.app](https://expense-tracker-nu-nine-16.vercel.app) with root directory `client`, build command `npm run build`, and `vercel.json` rewrites.
+- **Backend**: Hosted on [Render](https://render.com/) at [https://expense-tracker-api-anji.onrender.com](https://expense-tracker-api-anji.onrender.com) with root directory `server`, build command `npm install`, and start command `npm start`.
+- **Database**: Hosted on [Neon](https://neon.tech/) Serverless PostgreSQL with automatic zero-config local storage fallback.
 
 ---
 
