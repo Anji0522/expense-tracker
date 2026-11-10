@@ -11,6 +11,20 @@ import {
 import { formatCurrency } from '../../utils/formatCurrency'
 import { useAuth } from '../../context/AuthContext'
 
+const CustomTooltip = ({ active, payload, label, currency }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="chart-tooltip">
+        <p className="tooltip-label">{label}</p>
+        <p className="tooltip-value">
+          {formatCurrency(payload[0].value, currency)}
+        </p>
+      </div>
+    )
+  }
+  return null
+}
+
 export const TrendLine = ({ data = [] }) => {
   const { user } = useAuth()
 
@@ -26,20 +40,6 @@ export const TrendLine = ({ data = [] }) => {
     label: item.label,
     amount: Number(item.total_amount),
   }))
-
-  const CustomTooltip = ({ active, payload, label }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="chart-tooltip">
-          <p className="tooltip-label">{label}</p>
-          <p className="tooltip-value">
-            {formatCurrency(payload[0].value, user?.currency)}
-          </p>
-        </div>
-      )
-    }
-    return null
-  }
 
   return (
     <div className="chart-wrapper" style={{ width: '100%', height: 280 }}>
@@ -67,7 +67,7 @@ export const TrendLine = ({ data = [] }) => {
             tickLine={false}
             tickFormatter={(val) => `${val >= 1000 ? `${(val / 1000).toFixed(0)}k` : val}`}
           />
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltip currency={user?.currency} />} />
           <Area
             type="monotone"
             dataKey="amount"

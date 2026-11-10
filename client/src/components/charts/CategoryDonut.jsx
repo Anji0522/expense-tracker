@@ -10,6 +10,23 @@ import {
 import { formatCurrency } from '../../utils/formatCurrency'
 import { useAuth } from '../../context/AuthContext'
 
+const CustomTooltip = ({ active, payload, currency }) => {
+  if (active && payload && payload.length) {
+    const entry = payload[0]
+    return (
+      <div className="chart-tooltip">
+        <p className="tooltip-name" style={{ color: entry.payload.color }}>
+          {entry.name}
+        </p>
+        <p className="tooltip-value">
+          {formatCurrency(entry.value, currency)}
+        </p>
+      </div>
+    )
+  }
+  return null
+}
+
 export const CategoryDonut = ({ data = [] }) => {
   const { user } = useAuth()
 
@@ -26,23 +43,6 @@ export const CategoryDonut = ({ data = [] }) => {
     value: Number(item.amount),
     color: item.color || '#6366F1',
   }))
-
-  const CustomTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
-      const entry = payload[0]
-      return (
-        <div className="chart-tooltip">
-          <p className="tooltip-name" style={{ color: entry.payload.color }}>
-            {entry.name}
-          </p>
-          <p className="tooltip-value">
-            {formatCurrency(entry.value, user?.currency)}
-          </p>
-        </div>
-      )
-    }
-    return null
-  }
 
   return (
     <div className="chart-wrapper" style={{ width: '100%', height: 280 }}>
@@ -61,7 +61,7 @@ export const CategoryDonut = ({ data = [] }) => {
               <Cell key={`cell-${index}`} fill={entry.color} />
             ))}
           </Pie>
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltip currency={user?.currency} />} />
           <Legend
             verticalAlign="bottom"
             height={36}
