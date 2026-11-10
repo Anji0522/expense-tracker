@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import { env } from '../config/env.js'
 import ApiError from '../utils/ApiError.js'
-import { query } from '../config/db.js'
+import UserModel from '../models/user.model.js'
 
 export const authenticate = async (req, res, next) => {
   try {
@@ -25,16 +25,19 @@ export const authenticate = async (req, res, next) => {
       throw ApiError.unauthorized('Invalid authentication token')
     }
 
-    const result = await query(
-      'SELECT id, name, email, currency, created_at FROM users WHERE id = $1',
-      [decoded.id]
-    )
+    const user = await UserModel.findById(decoded.id)
 
-    if (result.rows.length === 0) {
+    if (!user) {
       throw ApiError.unauthorized('User not found or account deactivated')
     }
 
-    req.user = result.rows[0]
+    req.user = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      currency: user.currency,
+      created_at: user.created_at,
+    }
     next()
   } catch (error) {
     next(error)

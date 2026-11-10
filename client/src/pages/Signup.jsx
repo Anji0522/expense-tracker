@@ -30,9 +30,12 @@ export const Signup = () => {
       login(res.user, res.token)
       navigate('/dashboard')
     } catch (err) {
-      setError(
-        err.response?.data?.message || 'Registration failed. Please try again.'
-      )
+      const msg =
+        err.response?.data?.message ||
+        (err.code === 'ERR_NETWORK'
+          ? 'Cannot connect to backend server. Make sure the server is running on port 5000.'
+          : err.message || 'Registration failed. Please try again.')
+      setError(msg)
     } finally {
       setLoading(false)
     }

@@ -16,6 +16,10 @@ build/
 *.log
 npm-debug.log*
 
+# Local SQLite / JSON fallback databases
+local-db.json
+server/src/db/local-db.json
+
 # Testing
 coverage/
 

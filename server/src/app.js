@@ -15,17 +15,23 @@ const allowedOrigins = env.clientUrl
   .map(origin => origin.trim().replace(/\/$/, ''))
   .filter(Boolean)
 
-app.use(helmet())
+app.use(helmet({ crossOriginResourcePolicy: false }))
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests without an Origin header, such as server-to-server
-      // requests and local command-line testing.
-      if (!origin || allowedOrigins.includes(origin)) {
+      // Allow requests with no origin (like mobile apps, curl, or same-origin)
+      if (!origin) return callback(null, true)
+      
+      // Allow localhost, 127.0.0.1, Vercel deployments, or custom CLIENT_URL
+      const isLocal = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
+      const isVercel = /\.vercel\.app$/.test(new URL(origin).hostname)
+      const isAllowed = allowedOrigins.includes(origin)
+
+      if (isLocal || isVercel || isAllowed || env.nodeEnv === 'development') {
         return callback(null, true)
       }
-      return callback(new Error('Origin not allowed by CORS'))
+      return callback(null, false)
     },
     credentials: true,
   }),
